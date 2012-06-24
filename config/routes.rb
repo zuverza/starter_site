@@ -1,11 +1,13 @@
 StarterSite::Application.routes.draw do
   resources :users
   resources :user_sessions
+  resources :pages
 
 
 match 'login' => "user_sessions#new", :as => :login
 match 'logout' => "user_sessions#destroy", :as =>:logout
 match 'signup' => "users#new", :as => :signup
+match 'dreamweaver1' => "pages#dreamweaver1", :as => :signup
 
 
   # The priority is based upon order of creation:
@@ -56,8 +58,8 @@ match 'signup' => "users#new", :as => :signup
   #   end
 
   # You can have the root of your site routed with "root"
-  # just remember to delete public/index.html.
-  # root :to => 'welcome#index'
+  #just remember to delete public/index.html.
+  root :to => 'pages#dreamweaver1'
 
   # See how all your routes lay out with "rake routes"
 
